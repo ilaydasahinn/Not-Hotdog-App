@@ -1,20 +1,48 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar color="tertiary">
     <ion-title>
-      Blank
+      Firestore Image Upload
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <button ion-button icon-start (click)="captureAndUpload()">
+    <ion-icon name="camera"></ion-icon>
+    Activate Cloud Vision
+</button>  
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-col col-12>
+  <img width="100%" height="auto" [src]="image">
+</ion-col>
+
+  <ion-col *ngIf="result$ | async as result">
+
+    <h3>Hotdog?</h3>
+  
+    <button *ngIf="result.hotdog"
+              color="secondary"ion-button full>
+  
+      Hotdog!!!
+    </button>
+  
+    <button *ngIf="!result.hotdog"
+              color="danger"ion-button full>
+    
+      Not Hotdog :)
+    </button>
+  
+    <h3>Labels</h3>
+  
+    <ion-chip color="secondary"
+            *ngFor="let label of result.labels">
+            
+            <ion-label>{{ label }}</ion-label>
+          
+    </ion-chip>
+      
+  </ion-col>
+  
 </ion-content>
+
+

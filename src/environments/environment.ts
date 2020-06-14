@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyAcav2F-qXGLRjXjXfv19mTqFEly0Bx_Qk",
+    authDomain: "ilayda-firebase.firebaseapp.com",
+    databaseURL: "https://ilayda-firebase.firebaseio.com",
+    projectId: "ilayda-firebase",
+    storageBucket: "ilayda-firebase.appspot.com",
+    messagingSenderId: "421614643288",
+    appId: "1:421614643288:web:103eb08e92ca2d43fd422d"
+  }
 };
 
 /*

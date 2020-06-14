@@ -1,5 +1,7 @@
 {
   "name": "not-hot-dog",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
